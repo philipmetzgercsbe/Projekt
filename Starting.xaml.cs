@@ -24,6 +24,7 @@ namespace Projekt_philipmetzger
         {
             InitializeComponent();
             Sqlconnection();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,25 +40,40 @@ namespace Projekt_philipmetzger
             thisConnection.Open();
 
             SqlCommand cmd = new SqlCommand();
-
-
-            cmd.CommandText = ("");
+           
+            
 
         }
 
-        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        /* private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
+           
             Window overviewWindow = new OverviewWindow();
             overviewWindow.Show();
             this.Close();
+            
         }
+        */
+        public void removeStartingText(object sender, EventArgs e)
+        {
+            if (txtBoxUsername.Text == "Benutzername")
+            {
+                txtBoxUsername.Text = "";
+            }
+            
+        }
+        public void addStartingText(object sender, EventArgs e)
+        {
+            txtBoxUsername.Text = "";
+            passwordBox.Password = "123456789";
 
+        }
         private void checkBoxSaveUsername_Checked(object sender, RoutedEventArgs e)
         {
             bool Saved = false;
             if (Saved == true)
             {
-               Properties.Settings.Default.GetUsername;
+              // Properties.Resources.SavedUsername;
                Properties.Settings.Default.Save();
             }
             else
@@ -68,9 +84,29 @@ namespace Projekt_philipmetzger
             
 
         }
+
         public String GetUsername
         {
             get { return txtBoxUsername.Text; }
+        }
+
+        
+
+        private void txtBoxUsername_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            removeStartingText(txtBoxUsername);
+            
+
+        }
+
+        private void addStartingText()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void removeStartingText(TextBox txtBoxUsername)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace OverviewWindow
+namespace Projekt_philipmetzger
 {
     /// <summary>
     /// Interaktionslogik für "App.xaml"
